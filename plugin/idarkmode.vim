@@ -37,7 +37,7 @@ function! IdkmodSetTheme(isDark)
         execute 'colorscheme ' .. g:IDarkModeDarkTheme
     else
         colorscheme default
-        execute 'colorscheme' ..  g:IDarkModeLightTheme
+        execute 'colorscheme ' ..  g:IDarkModeLightTheme
     endif
     if g:IDarkModeUpdateLightline
         call IdkmodUpdateLightline()
