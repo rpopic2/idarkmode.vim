@@ -1,0 +1,10 @@
+#!/bin/bash
+#iOS Dark Mode Integration
+
+if [[ $1 -ne 1 ]] && [[ $1 -ne 0 ]];
+then
+    echo >&2 'ERROR: Only 0 false and 1 true are accepted.'
+    exit 1
+fi
+sed -i "s/IOS_ISDARKMODE=.*/IOS_ISDARKMODE=$1/" ~/.iosinfo
+echo hi
