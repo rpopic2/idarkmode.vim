@@ -1,3 +1,6 @@
+
+
+
 " idarkmode.vim
 " Makes vim to automatically adapt to your iPhone and iPad's curent appearance. You change
 " iOS's appearance to dark, vim will change to dark appearance automatically.
@@ -9,9 +12,12 @@ if exists("g:loaded_idarkmode")
 endif
 let g:loaded_idarkmode = 1
 
-if !exists(":IDarkModeUpdate")
-    command IDarkModeUpdate :call s:IdkmodUpdate()
+if !exists(":IDarkModeToggle")
+    command IDarkModeToggle :call s:IdkmodToggle()
 endif
+
+map ~/.vim/plugged/idarkmode.vim/bin/idktog :IDarkModeToggle
+imap ~/.vim/plugged/idarkmode.vim/bin/idktog <esc>:IDarkModeToggle<esc>i
 
 au VimEnter  * call s:IdkmodUpdate()
 au CursorHold * call s:IdkmodUpdate()
@@ -29,6 +35,11 @@ function s:IdkmodUpdate()
     if s:isBgDark != s:isDarkMode
         call IdkmodSetTheme(s:isDarkMode)
     endif
+endfunction
+
+function s:IdkmodToggle()
+    silent !~/.vim/plugged/idarkmode.vim/bin/idktog
+    call s:IdkmodUpdate()
 endfunction
 
 "colorscheme default is a dummy call.
