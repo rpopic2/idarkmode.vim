@@ -1,10 +1,8 @@
-
-
-
 " idarkmode.vim
 " Makes vim to automatically adapt to your iPhone and iPad's curent appearance. You change
 " iOS's appearance to dark, vim will change to dark appearance automatically.
-" Last Change : 12 May 2022
+" Last Change : 13 May 2022
+" Version 1.0_RC
 " Maintainer : rpopic2 (https://github.com/rpopic2)
 
 if exists("g:loaded_idarkmode")
@@ -27,6 +25,7 @@ au VimResized * call s:IdkmodUpdate()
 let g:IDarkModeDarkTheme = 'rose-pine-dark'
 let g:IDarkModeLightTheme = 'rose-pine-light'
 let g:IDarkModeUpdateLightline = 1
+let g:IDarkModeLightlineThemePath = 'autoload/lightline/colorscheme/rosepine.vim'
 
 function s:IdkmodUpdate()
     let s:iosinfo = readfile(glob('~/.iosinfo'))
@@ -56,9 +55,8 @@ function! IdkmodSetTheme(isDark)
     endif
 endfunction
 
-
 function! IdkmodUpdateLightline()
-    execute 'source' globpath(&rtp, 'autoload/lightline/colorscheme/rosepine.vim')
+    execute 'source' globpath(&rtp, g:IDarkModeLightlineThemePath)
     call lightline#colorscheme()
     call lightline#update()
 endfunction
