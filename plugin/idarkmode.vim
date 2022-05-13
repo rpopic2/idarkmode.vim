@@ -13,6 +13,7 @@ if !exists(":IDarkModeUpdate")
     command IDarkModeUpdate :call s:IdkmodUpdate()
 endif
 
+au VimEnter  * call s:IdkmodUpdate()
 au CursorHold * call s:IdkmodUpdate()
 au CursorHoldI * call s:IdkmodUpdate()
 au VimResized * call s:IdkmodUpdate()
