@@ -2,4 +2,4 @@
 source ~/.iosinfo
 [[ $IOS_ISDARKMODE -eq 0 ]] && RES=1 || RES=0
 sed -i "s/IOS_ISDARKMODE=.*/IOS_ISDARKMODE=$RES/" ~/.iosinfo
-echo successfully set to $RES
+echo successfully set dark mode to $RES

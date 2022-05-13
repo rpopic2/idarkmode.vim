@@ -7,4 +7,4 @@ then
     exit 1
 fi
 sed -i "s/IOS_ISDARKMODE=.*/IOS_ISDARKMODE=$1/" ~/.iosinfo
-echo successfully set to $1
+echo successfully set dark modr to $1
