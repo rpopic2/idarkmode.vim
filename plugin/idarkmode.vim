@@ -21,12 +21,6 @@ au VimEnter  * call s:IdkmodUpdate()
 au CursorHold * call s:IdkmodUpdate()
 au CursorHoldI * call s:IdkmodUpdate()
 au VimResized * call s:IdkmodUpdate()
-au User IdkAppearanceChanged call IdkmodUpdateLightline() 
-
-let g:IDarkModeDarkTheme = 'rose-pine-dark'
-let g:IDarkModeLightTheme = 'rose-pine-light'
-let g:IDarkModeUpdateLightline = 1
-let g:IDarkModeLightlineThemePath = 'autoload/lightline/colorscheme/rosepine.vim'
 
 function s:IdkLoadIosInfo()
     let s:iosinfo = readfile(glob('~/.iosinfo'))
