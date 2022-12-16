@@ -1,15 +1,16 @@
 # idarkmode.vim
-Makes your blink shell's vim adapt to your iPhone, iPad's dark mode
+Make your vim in Blink Shell adapt to dark mode of your iPhone, or iPad.
 
 ## Installation
 
-1. Add this to your theme .js file
-Change the directory to where you installed this plugin.
+1. Add following lines of code to your theme .js file.
+
 ```
 if(typeof t.io === 'undefined') return;
     t.io.sendString("~/.vim/plugged/idarkmode.vim/bin/idktog\n");
 ```
-e.g) https://gist.github.com/rpopic2/68fe20e070375adca8d47a03673bd125
+You can change the directory to where you installed this plugin.
+[e.g](https://gist.github.com/rpopic2/68fe20e070375adca8d47a03673bd125)
 
 2. Use your favourite vim plugin manager
 ```
